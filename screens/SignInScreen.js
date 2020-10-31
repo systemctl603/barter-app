@@ -1,5 +1,5 @@
 import * as React from "react";
-import { AccessibilityInfo, Alert, View } from "react-native";
+import { Alert, View } from "react-native";
 import { TextInput, Appbar, Button } from "react-native-paper";
 import { auth } from "../firebase.conf";
 import SignInModal from "../components/SignInModal"
@@ -8,13 +8,14 @@ import SignInModal from "../components/SignInModal"
  * Sign in Screen
  * Opens a modal to sign up
  */
-export default function SignInScreen() {
+export default function SignInScreen({ navigation }) {
   const [email, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [visible, setVisible] = React.useState(false);
 
   function userLogin() {
     auth.signInWithEmailAndPassword(email, password)
+      .then(() => navigation.navigate("Home"))
       .catch((err) => Alert.alert(err.message));
   }
 

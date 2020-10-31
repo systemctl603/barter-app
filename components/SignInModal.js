@@ -1,43 +1,60 @@
 import React, { useState } from "react";
 import { Modal } from "react-native";
-import { TextInput, Text, Title, Button } from "react-native-paper";
+import { TextInput, View, Button } from "react-native-paper";
 import { db, auth } from "../firebase.conf"
 
-const arrayOfFields = [
-  "Name",
-  "Number",
-  "Address",
-  "Email",
-  "Password",
-  "Confirm password",
-];
-
 export default function SignInModal(props) {
-  const [fields, setFields] = useState({});
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cnfrmpassword, setCnfrmPassword] = useState("");
   return (
-    <View>
-      <Modal visible={props.visisble}>
-        <Title>Sign Up</Title>
-        {arrayOfFields.map((field) => (
-          <TextInput
-            label={field}
-            value={fields[field] || ""}
-            onChangeText={(text) => {
-              var copy = fields;
-              copy[field] = text;
-              setFields(copy);
-            }}
-          />
-        ))}
-        <Button onPress={() => {
-          auth.createUserWithEmailAndPassword(fields["Email"], fields["Password"])
-            .then(user => {
-              db.collection("users")
-                .doc(user.uid)
-                .set({ ...fields })
+    <Modal visible={props.visisble}>
+      <TextInput
+        label="Name"
+        value={name}
+        onChangeText={text => setName(text)}
+      />
+      <TextInput
+        label="Phone"
+        value={phone}
+        onChangeText={text => setPhone(text)}
+      />
+      <TextInput
+        label="Address"
+        value={address}
+        onChangeText={text => setAddress(text)}
+      />
+      <TextInput
+        label="Email"
+        value={email}
+        onChangeText={text => setEmail(text)}
+      />
+      <TextInput
+        label="Password"
+        value={password}
+        autoCompleteType="password"
+        onChangeText={text => setPassword(text)}
+        secureTextEntry
+      />
+      <TextInput
+        label="Confirm Password"
+        value={cnfrmpassword}
+        autoCompleteType="password"
+        onChangeText={text => setCnfrmPassword(text)}
+        secureTextEntry
+      />
+
+      <Button onPress={() => {
+        auth.createUserWithEmailAndPassword(email, password)
+          .then(user => {
+            db.collection("users").doc(user.user.uid).set({
+              name, phone, address, email
             })
-        }}>Submit</Button>
-      </Modal>
-    </View>
+          })
+      }}>Submit</Button>
+    </Modal>
   );
 }

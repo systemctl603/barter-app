@@ -1,19 +1,18 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
 import SignInScreen from "./screens/SignInScreen";
-import unused from "app";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import HomeStack from "./components/HomeStack";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <SignInScreen />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Sign in" component={SignInScreen} />
+        <Stack.Screen name="Home" component={HomeStack} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-});

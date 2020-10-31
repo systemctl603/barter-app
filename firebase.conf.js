@@ -1,13 +1,13 @@
 import * as firebase from "firebase";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyA4wX2uQRw6ey2ebt3paTrvxP3ekTK3ou0",
-  authDomain: "book-santa-f4997.firebaseapp.com",
-  databaseURL: "https://book-santa-f4997.firebaseio.com",
-  projectId: "book-santa-f4997",
-  storageBucket: "book-santa-f4997.appspot.com",
-  messagingSenderId: "59409696675",
-  appId: "1:59409696675:web:4ba1bd1138b23631bb7c16",
+var firebaseConfig = {
+  apiKey: "AIzaSyBekRCxQbGkcrdS8HB-I6jezQbrWHr5Su8",
+  authDomain: "barter-app-c4bad.firebaseapp.com",
+  databaseURL: "https://barter-app-c4bad.firebaseio.com",
+  projectId: "barter-app-c4bad",
+  storageBucket: "barter-app-c4bad.appspot.com",
+  messagingSenderId: "278913258887",
+  appId: "1:278913258887:web:7bba258343881bba642f22"
 };
 
 firebase.initializeApp(firebaseConfig);
