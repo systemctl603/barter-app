@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import { db, auth } from "../firebase.conf";
 import { Text, Card } from "react-native-paper";
 
@@ -25,15 +25,15 @@ export default function Barters() {
       createdByUserSnapshot,
       interestedInSnapshot,
       allSnapshot,
-    ] = await Promise.allSettled([createdByUser, interestedIn, all]);
+    ] = await Promise.all([createdByUser, interestedIn, all]);
     console.log({ createdByUserSnapshot, allSnapshot, interestedInSnapshot });
-    const createdByUserArray = createdByUserSnapshot.value.docs;
-    const interestedInArray = interestedInSnapshot.value.docs;
+    const createdByUserArray = createdByUserSnapshot.docs;
+    const interestedInArray = interestedInSnapshot.docs;
 
     return {
       crtdby: createdByUserArray,
       intin: interestedInArray,
-      all: allSnapshot.value,
+      all: allSnapshot,
     };
   }
 
@@ -89,8 +89,8 @@ export default function Barters() {
       {!item.interested ? (
         <Text>No one is interested in trading</Text>
       ) : (
-          <Text>{`${item.interested} is interested in your trade`}</Text>
-        )}
+        <Text>{`${item.interested} is interested in your trade`}</Text>
+      )}
     </Card>
   );
 
@@ -100,8 +100,8 @@ export default function Barters() {
       {!item.interested ? (
         <Text>No one is interested in trading</Text>
       ) : (
-          <Text>{`${item.interested} is interested to trade`}</Text>
-        )}
+        <Text>{`${item.interested} is interested to trade`}</Text>
+      )}
     </Card>
   );
 
@@ -111,13 +111,13 @@ export default function Barters() {
       {!item.interested ? (
         <Text>No one is interested in trading</Text>
       ) : (
-          <Text>{`${item.interested} is interested in your trade`}</Text>
-        )}
+        <Text>{`${item.interested} is interested in your trade`}</Text>
+      )}
     </Card>
   );
 
   return (
-    <>
+    <View>
       <Text>Created by you</Text>
       <FlatList
         data={createdByUser}
@@ -138,6 +138,6 @@ export default function Barters() {
         onRefresh={loadMore}
         refreshing={refreshing}
       />
-    </>
+    </View>
   );
 }
