@@ -1,0 +1,13 @@
+#+BEGIN_SRC js
+var app = "ls"
+#+END_SRC
+
+#+RESULTS:
+: undefined
+
+
+#+BEGIN_SRC js
+console.log(app);
+#+END_SRC
+
+#+RESULTS:

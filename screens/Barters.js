@@ -19,16 +19,14 @@ export default function Barters() {
     const interestedIn = barterRef
       .where("initiator", "==", auth.currentUser.email)
       .get();
-    const all = barterRef
-      .where("interested", "!=", null)
-      .get();
+    const all = barterRef.where("interested", "!=", null).get();
 
-    const [createdByUserSnapshot, interestedInSnapshot, allSnapshot] = await Promise.allSettled([
-      createdByUser,
-      interestedIn,
-      all,
-    ]);
-    console.log({ createdByUserSnapshot, allSnapshot, interestedInSnapshot })
+    const [
+      createdByUserSnapshot,
+      interestedInSnapshot,
+      allSnapshot,
+    ] = await Promise.allSettled([createdByUser, interestedIn, all]);
+    console.log({ createdByUserSnapshot, allSnapshot, interestedInSnapshot });
     const createdByUserArray = createdByUserSnapshot.value.docs;
     const interestedInArray = interestedInSnapshot.value.docs;
 
@@ -55,13 +53,13 @@ export default function Barters() {
         console.log(entry);
       }, []);
 
-      console.log(all)
+      console.log(all);
       var lastVis = all.docs[all.docs.length - 1];
-      setLastLoaded(lastVis)
+      setLastLoaded(lastVis);
 
       setIntinArr(intinArr);
       setCrtdByArr(crtdbyArr);
-      setAllArr(all)
+      setAllArr(all);
     });
   });
 
@@ -69,7 +67,7 @@ export default function Barters() {
     setRefreshing(true);
     const all = await db
       .collection("trades")
-      .where("interested", "!=", "null")
+      .where("interested", "!=", null)
       .startAfter(lastLoaded)
       .limit(25)
       .get();
@@ -77,11 +75,11 @@ export default function Barters() {
     var nextToLoadFrom = all.docs[all.docs.length - 1];
     const allArr = all.docs.reduce((acc, doc) => {
       const entry = { id: doc.id, ...doc.data() };
-      acc.push(entry)
-    }, [])
+      acc.push(entry);
+    }, []);
 
     setLastLoaded(nextToLoadFrom);
-    setAllArr(arr => _.union(arr, all));
+    setAllArr((arr) => _.union(arr, allArr));
     setRefreshing(false);
   }
 
@@ -95,7 +93,6 @@ export default function Barters() {
         )}
     </Card>
   );
-
 
   const renderComponentForAll = (item) => (
     <Card>

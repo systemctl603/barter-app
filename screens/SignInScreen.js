@@ -2,7 +2,7 @@ import * as React from "react";
 import { Alert, View } from "react-native";
 import { TextInput, Appbar, Button } from "react-native-paper";
 import { auth } from "../firebase.conf";
-import SignInModal from "../components/SignInModal"
+import SignInModal from "../components/SignInModal";
 
 /**
  * Sign in Screen
@@ -14,13 +14,14 @@ export default function SignInScreen({ navigation }) {
   const [visible, setVisible] = React.useState(false);
 
   function userLogin() {
-    auth.signInWithEmailAndPassword(email, password)
+    auth
+      .signInWithEmailAndPassword(email, password)
       .then(() => navigation.navigate("Home"))
       .catch((err) => Alert.alert(err.message));
   }
 
   function userSignUp() {
-    setVisible(true)
+    setVisible(true);
   }
 
   return (
