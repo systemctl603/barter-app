@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { selectUser } from "../redux-store/userSlice";
-import { useSelector } from "react-redux";
 import { Card, TextInput } from "react-native-paper";
 import { Button } from "react-native-paper";
 import { auth, db } from "../firebase.conf";
 
 export default function Settings() {
   const [fields, setFields] = useState({});
-  const user = useSelector(selectUser);
+  const [user, setUser] = useState({});
+  store.subscribe(() => setUser(store.getState()));
   return (
     <View>
       <Card>

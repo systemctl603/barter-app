@@ -1,22 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createStore } from "redux";
+import reducer from "./reducer";
 
-export const slice = createSlice({
-  name: "user",
-  initialState: {
-    value: null,
-  },
-  reducers: {
-    login: (state, action) => {
-      state.value = action.payload;
-    },
-    logout: (state) => {
-      state.value = null;
-    },
-  },
-});
+const store = createStore(
+  reducer,
+  null,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-export const { login, logout } = slice.actions;
-
-export const selectUser = (state) => state.counter.value;
-
-export default slice.reducer;
+export default store;
