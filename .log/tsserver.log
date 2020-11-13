@@ -1,71 +1,36 @@
-Info 0    [15:15:14.36] Starting TS Server
-Info 1    [15:15:14.36] Version: 4.0.3
-Info 2    [15:15:14.36] Arguments: /usr/bin/node /home/arjun/.local/bin/tsserver --logFile /home/arjun/Programs/WhiteHatJR/Projects/barter-app/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/65d18c3aadc7c1938daddce0aacb514e/tscancellation*
-Info 3    [15:15:14.36] Platform: linux NodeVersion: 12 CaseSensitive: true
-Info 4    [15:15:14.36] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
-Info 5    [15:15:14.49] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app
-Info 6    [15:15:14.49] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/App.js :: No config files found.
-Info 7    [15:15:14.52] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
-Info 8    [15:15:19.350] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 5298ms
-Info 9    [15:15:19.350] Project '/dev/null/inferredProject1*' (Inferred)
-Info 10   [15:15:19.350] 	Files (314)
+Info 0    [14:31:8.872] Starting TS Server
+Info 1    [14:31:8.875] Version: 4.0.3
+Info 2    [14:31:8.876] Arguments: /usr/bin/node /home/arjun/.local/bin/tsserver --logFile /home/arjun/Programs/WhiteHatJR/Projects/barter-app/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/49c8db8a092ce7a1df62131b0d92ea44/tscancellation*
+Info 3    [14:31:8.876] Platform: linux NodeVersion: 12 CaseSensitive: true
+Info 4    [14:31:8.876] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [14:31:8.897] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app
+Info 6    [14:31:8.899] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/App.js :: No config files found.
+Info 7    [14:31:8.907] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 8    [14:31:24.274] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 15367ms
+Info 9    [14:31:24.274] Project '/dev/null/inferredProject1*' (Inferred)
+Info 10   [14:31:24.274] 	Files (314)
 
-Info 11   [15:15:19.350] -----------------------------------------------
-Info 12   [15:15:19.407] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
-Info 13   [15:15:21.665] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true Elapsed: 2258ms
-Info 14   [15:15:21.665] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
-Info 15   [15:15:21.665] 	Files (123)
+Info 11   [14:31:24.275] -----------------------------------------------
+Info 12   [14:31:24.427] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 13   [14:31:27.864] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true Elapsed: 3437ms
+Info 14   [14:31:27.865] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 15   [14:31:27.865] 	Files (123)
 
-Info 16   [15:15:21.665] -----------------------------------------------
-Info 17   [15:15:23.157] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
-Info 18   [15:15:23.675] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true Elapsed: 518ms
-Info 19   [15:15:23.675] Project '/dev/null/inferredProject1*' (Inferred)
-Info 20   [15:15:23.675] 	Files (374)
+Info 16   [14:31:27.865] -----------------------------------------------
+Info 17   [14:31:30.545] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 18   [14:31:31.720] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true Elapsed: 1175ms
+Info 19   [14:31:31.720] Project '/dev/null/inferredProject1*' (Inferred)
+Info 20   [14:31:31.720] 	Files (374)
 
-Info 21   [15:15:23.675] -----------------------------------------------
-Info 22   [15:15:23.675] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
-Info 23   [15:15:23.675] 	Files (123)
+Info 21   [14:31:31.720] -----------------------------------------------
+Info 22   [14:31:31.720] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 23   [14:31:31.721] 	Files (123)
 
-Info 24   [15:15:23.675] -----------------------------------------------
-Info 25   [15:15:24.245] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
-Info 26   [15:15:24.251] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false Elapsed: 6ms
-Info 27   [15:15:26.497] Before ensureProjectForOpenFiles:
-Info 28   [15:15:26.498] After ensureProjectForOpenFiles:
-Info 29   [15:15:26.499] got projects updated in background, updating diagnostics for /home/arjun/Programs/WhiteHatJR/Projects/barter-app/App.js
-Info 30   [15:16:30.341] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens
-Info 31   [15:16:30.341] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens/Barters.js :: No config files found.
-Info 32   [15:22:30.826] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens
-Info 33   [15:22:30.826] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens/ExchangeRequest.js :: No config files found.
-Info 34   [15:22:34.924] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens
-Info 35   [15:22:34.925] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens/Settings.js :: No config files found.
-Info 36   [15:22:34.930] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
-Info 37   [15:22:35.148] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 1 structureChanged: true Elapsed: 218ms
-Info 38   [15:22:35.148] Project '/dev/null/inferredProject2*' (Inferred)
-Info 39   [15:22:35.148] 	Files (223)
-
-Info 40   [15:22:35.148] -----------------------------------------------
-Info 41   [15:22:35.888] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
-Info 42   [15:22:36.27] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 2 structureChanged: true Elapsed: 139ms
-Info 43   [15:22:36.27] Project '/dev/null/inferredProject2*' (Inferred)
-Info 44   [15:22:36.27] 	Files (292)
-
-Info 45   [15:22:36.27] -----------------------------------------------
-Info 46   [15:22:36.520] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
-Info 47   [15:22:36.522] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 3 structureChanged: false Elapsed: 2ms
-Info 48   [15:22:38.772] Before ensureProjectForOpenFiles:
-Info 49   [15:22:38.772] After ensureProjectForOpenFiles:
-Info 50   [15:22:38.772] got projects updated in background, updating diagnostics for /home/arjun/Programs/WhiteHatJR/Projects/barter-app/App.js,/home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens/Barters.js,/home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens/ExchangeRequest.js,/home/arjun/Programs/WhiteHatJR/Projects/barter-app/screens/Settings.js
-Info 51   [16:2:6.352] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store
-Info 52   [16:2:6.352] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/reducer.js :: No config files found.
-Info 53   [16:2:29.30] DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 54   [16:2:29.31] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 55   [16:3:0.121] DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 56   [16:3:0.121] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 57   [16:3:0.121] DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 1:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 58   [16:3:0.121] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 1:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 59   [16:3:2.909] DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 60   [16:3:2.909] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 61   [16:3:2.909] DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 1:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 62   [16:3:2.909] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 1:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 63   [16:5:47.431] DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info 64   [16:5:47.431] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/app.tsx 0:: WatchInfo: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 24   [14:31:31.721] -----------------------------------------------
+Info 25   [14:31:32.699] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 26   [14:31:32.707] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false Elapsed: 8ms
+Info 27   [14:31:34.948] Before ensureProjectForOpenFiles:
+Info 28   [14:31:34.949] After ensureProjectForOpenFiles:
+Info 29   [14:31:34.949] got projects updated in background, updating diagnostics for /home/arjun/Programs/WhiteHatJR/Projects/barter-app/App.js
+Info 30   [14:37:12.288] Search path: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store
+Info 31   [14:37:12.291] For info: /home/arjun/Programs/WhiteHatJR/Projects/barter-app/redux-store/reducer.js :: No config files found.
