@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, ScrollView } from "react-native";
 import { db, auth } from "../firebase.conf";
 import { Text, Card, Title, Subheading } from "react-native-paper";
 
@@ -65,7 +65,6 @@ export default function Barters() {
           <Text>{`${item.interested} is interested in your trade`}</Text>
         )}
       </Card.Content>
-      <Web></Web>
     </Card>
   );
 
@@ -88,7 +87,7 @@ export default function Barters() {
   const ListEmpty = () => <Subheading>This category is empty</Subheading>;
 
   return (
-    <View>
+    <ScrollView>
       <Title>Created By You</Title>
       <FlatList
         data={createdByUser}
@@ -104,6 +103,6 @@ export default function Barters() {
         ListEmptyComponent={ListEmpty}
       />
       <Title>All</Title>
-    </View>
+    </ScrollView>
   );
 }

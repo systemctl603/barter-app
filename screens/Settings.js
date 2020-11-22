@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, TextInput } from "react-native-paper";
 import { Button } from "react-native-paper";
+import { ScrollView, Alert } from "react-native";
 import { auth, db } from "../firebase.conf";
+import store from "../redux-store/userSlice";
 
 export default function Settings() {
   const [fields, setFields] = useState({});
   const [user, setUser] = useState({});
   store.subscribe(() => setUser(store.getState()));
+  useEffect(() => {
+    db.collection("users")
+      .doc(auth.currentUser.uid)
+      .get()
+      .then((doc) => {
+        setFields(doc.data());
+      });
+  }, []);
   return (
-    <View>
+    <ScrollView>
       <Card>
         <Card.Title title="Name" />
         <Card.Content>
@@ -62,8 +72,8 @@ export default function Settings() {
         <Card.Actions>
           <Button
             onPress={() => {
-              user
-                .sendEmailVerification()
+              auth
+                .sendPasswordResetEmail(auth.currentUser.email)
                 .then(() => Alert.alert("Sent!", "Check your email"))
                 .catch(() => Alert.alert(`There was an error`));
             }}
@@ -80,6 +90,6 @@ export default function Settings() {
       >
         Update settings
       </Button>
-    </View>
+    </ScrollView>
   );
 }

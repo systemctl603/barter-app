@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { KeyboardAvoidingView } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { db, auth } from "../firebase.conf";
 
@@ -7,7 +7,7 @@ export default function ExchangeRequest() {
   const [name, setName] = useState("");
   const [object, setObject] = useState("");
   return (
-    <View>
+    <KeyboardAvoidingView>
       <TextInput
         label="Name of object"
         value={name}
@@ -30,6 +30,6 @@ export default function ExchangeRequest() {
       >
         Submit
       </Button>
-    </View>
+    </KeyboardAvoidingView>
   );
 }

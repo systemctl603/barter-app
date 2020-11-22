@@ -20,8 +20,8 @@ export default function SignInScreen({ navigation }) {
       .then(() => {
         navigation.navigate("Home");
         auth.onAuthStateChanged((user) => {
-          if (user) store.dispatch({'type': "login", 'payload': user})
-          else store.dispatch({'type': "logout"})
+          if (user) store.dispatch({ type: "login", payload: user });
+          else store.dispatch({ type: "logout" });
         });
       })
       .catch((err) => Alert.alert(err.message));
@@ -33,9 +33,6 @@ export default function SignInScreen({ navigation }) {
 
   return (
     <View>
-      <Appbar>
-        <Appbar.Content title="Sign in" />
-      </Appbar>
       <TextInput
         label="Email"
         text={email}
@@ -48,7 +45,7 @@ export default function SignInScreen({ navigation }) {
       />
       <Button onPress={userLogin}>Submit</Button>
       <Button onPress={userSignUp}>Sign up</Button>
-      <SignInModal visible={visible} />
+      {/* <SignInModal visible={visible} /> */}
     </View>
   );
 }
