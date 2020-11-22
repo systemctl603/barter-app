@@ -2,12 +2,11 @@ import * as React from "react";
 import { Alert, View } from "react-native";
 import { TextInput, Appbar, Button } from "react-native-paper";
 import { auth } from "../firebase.conf";
-import { useDispatch } from "react-redux";
-import { login, logout } from "../redux-store/userSlice";
 import SignInModal from "../components/SignInModal";
+import store from "../redux-store/userSlice";
 
 /**
- * Sign in Screen \
+ * Sign in Screen
  * Opens a modal to sign up
  */
 export default function SignInScreen({ navigation }) {
@@ -15,16 +14,14 @@ export default function SignInScreen({ navigation }) {
   const [password, setPassword] = React.useState("");
   const [visible, setVisible] = React.useState(false);
 
-  const dispatch = useDispatch();
-
   function userLogin() {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((user) => {
+      .then(() => {
         navigation.navigate("Home");
         auth.onAuthStateChanged((user) => {
-          if (user) dispatch(login(user));
-          else dispatch(logout());
+          if (user) store.dispatch({'type': "login", 'payload': user})
+          else store.dispatch({'type': "logout"})
         });
       })
       .catch((err) => Alert.alert(err.message));

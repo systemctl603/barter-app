@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Sign in" component={SignInScreen} />
-        <Stack.Screen name="Side Drawer" component={SideDrawerStack} />
+        <Stack.Screen name="Home" component={SideDrawerStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );
