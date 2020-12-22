@@ -91,6 +91,20 @@ export default function Barters() {
         }
     };
 
+    const search = query => {
+        console.log(query);
+        db.collection("trades")
+            .where("name", "==", query)
+            .get()
+            .then(snapshot => {
+                var searchRes = snapshot.docs.map(() => ({
+                    ...doc.data(),
+                    id: doc.id,
+                }));
+                setSearchResults(searchRes);
+            });
+    };
+
     return (
         <ScrollView>
             <Title>Created By You</Title>
@@ -110,7 +124,8 @@ export default function Barters() {
             <Title>All</Title>
             <Searchbar
                 placeholder="Search"
-                onChangeText={onSearch}
+                onChangeText={text => setSearchQuery(text)}
+                onEndEditing={search(searchQuery)}
                 value={searchQuery}
             />
             <FlatList
