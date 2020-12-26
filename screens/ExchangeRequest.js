@@ -25,6 +25,7 @@ export default function ExchangeRequest() {
                         object: object,
                         initiator: auth.currentUser.email,
                         interested: null,
+                        fulfillment: 0,
                     });
                 }}
             >
