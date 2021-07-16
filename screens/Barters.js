@@ -48,12 +48,11 @@ export default function Barters() {
     };
 
     const search = (query) => {
-        console.log(query);
         db.collection("trades")
             .where("name", "==", query)
             .get()
             .then((snapshot) => {
-                var searchRes = snapshot.docs.map(() => ({
+                var searchRes = snapshot.docs.map((doc) => ({
                     ...doc.data(),
                     id: doc.id,
                 }));
@@ -91,6 +90,7 @@ export default function Barters() {
                                 to: item.interested,
                                 from: item.initiator,
                                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                                read: false,
                                 msg: `${item.initiator} has sent the item.`,
                             });
                             if (item.fulfillment + 1 == 2) {
@@ -101,6 +101,7 @@ export default function Barters() {
                                     to: item.interested,
                                     from: item.initiator,
                                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                                    read: false,
                                     msg: `Both parties have sent the item for ${item.name}`,
                                 });
                                 db.collection("trades").doc(item.id).delete();
@@ -139,6 +140,7 @@ export default function Barters() {
                                 to: item.interested,
                                 from: item.initiator,
                                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                                read: false,
                                 msg: `${item.initiator} has sent the item.`,
                             });
                             if (item.fulfillment + 1 == 2) {
@@ -149,6 +151,7 @@ export default function Barters() {
                                     to: item.interested,
                                     from: item.initiator,
                                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                                    read: false,
                                     msg: `Both parties have sent the item for ${item.name}`,
                                 });
                                 db.collection("trades").doc(item.id).delete();
@@ -188,7 +191,8 @@ export default function Barters() {
                             db.collection("notifications").add({
                                 from: auth.currentUser.email,
                                 to: item.initiator,
-                                content: `${auth.currentUser.email} is willing to trade ${item.name} for ${item.name}`,
+                                msg: `${auth.currentUser.email} is willing to trade ${item.name} for ${item.name}`,
+                                read: false,
                                 on: firebase.firestore.FieldValue.serverTimestamp(),
                             });
                         }}

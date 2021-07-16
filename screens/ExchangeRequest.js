@@ -20,7 +20,7 @@ export default function ExchangeRequest() {
             />
             <Button
                 onPress={() => {
-                    db.collection("trades").doc("asdf").set({
+                    db.collection("trades").doc().set({
                         name: name,
                         object: object,
                         initiator: auth.currentUser.email,

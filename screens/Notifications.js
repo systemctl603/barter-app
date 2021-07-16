@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import { FlatList, ScrollView } from "react-native";
 import { Title, Card, Paragraph } from "react-native-paper";
 import { auth, db } from "../firebase.conf";
@@ -14,6 +15,11 @@ export default function Notifications() {
             .then(snapshot => {
                 var notifs = snapshot.docs.map(doc => ({ 'id': doc.id, ...doc.data() }));
                 setNotifications(notifs);
+                snapshot.forEach(function (doc) {
+                    doc.ref.update({
+                        read: true
+                    })
+                })
             });
 
     }, [])
