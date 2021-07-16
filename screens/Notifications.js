@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { FlatList, ScrollView } from "react-native";
+import { Dimensions, FlatList, ScrollView, TouchableHighlight } from "react-native";
 import { Title, Card, Paragraph } from "react-native-paper";
+import { SwipeListView } from "react-native-swipe-list-view";
 import { auth, db } from "../firebase.conf";
 
 export default function Notifications() {
@@ -15,14 +16,15 @@ export default function Notifications() {
             .then(snapshot => {
                 var notifs = snapshot.docs.map(doc => ({ 'id': doc.id, ...doc.data() }));
                 setNotifications(notifs);
-                snapshot.forEach(function (doc) {
-                    doc.ref.update({
-                        read: true
-                    })
-                })
             });
 
     }, [])
+
+    const markAsRead = (notif) => {
+        db.collection("notifications").doc(notif.id).update({
+            read: true
+        })
+    }
 
     var renderItem = ({ item }) => (
         <Card>
@@ -33,13 +35,27 @@ export default function Notifications() {
         </Card>
     )
 
+    var hiddenRenderItem = ({ item }) => (
+        <TouchableHighlight onPress={() => markAsRead(item)}>
+            <View>
+                <Text>Delete</Text>
+            </View>
+        </TouchableHighlight>
+    )
+
     return (
         <ScrollView>
             <Title>Notifications</Title>
-            <FlatList
-                keyExtractor={item => item.id}
-                data={notifications}
+            <SwipeListView
+                disableLeftSwipe
                 renderItem={renderItem}
+                renderHiddenItem={hiddenRenderItem}
+                data={notifications}
+                rightOpenValue={-Dimensions.get("window").width}
+                previewRowKey={'0'}
+                previewOpenValue={-40}
+                previewOpenDelay={3000}
+                keyExtractor={i => i.id}
             />
         </ScrollView>
     );
